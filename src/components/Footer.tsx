@@ -3,25 +3,19 @@ import { GithubIcon } from "./icons/GithubIcon";
 
 export function Footer() {
   return (
-    <footer id="contact" className="border-t border-[#22252E] bg-[#0A0B0D] pt-24 pb-12">
-      <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-12">
+    <footer id="contact" className="border-t border-white/10 bg-black text-white pt-24 pb-12">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
         {/* Qumax Big Editorial CTA Banner */}
-        <div className="rounded-3xl border border-[#22252E] bg-[#121316] p-8 sm:p-14 lg:p-20 mb-20 text-center flex flex-col items-center relative overflow-hidden">
-          {/* Subtle Ambient Backlight */}
-          <div
-            className="pointer-events-none absolute -bottom-24 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-white/[0.04] blur-[100px] rounded-full"
-            aria-hidden="true"
-          />
-
-          <span className="text-xs font-mono uppercase tracking-widest text-[#9496A1] mb-4">
-            Get In Touch
+        <div className="qumax-card rounded-3xl p-8 sm:p-14 lg:p-20 mb-20 text-center flex flex-col items-center relative overflow-hidden">
+          <span className="text-xs font-mono uppercase tracking-widest text-white/50 mb-4">
+            (07) Contact &amp; Connect
           </span>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white tracking-[-0.04em] leading-[1.06] max-w-3xl mb-6 text-balance">
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-semibold text-white tracking-[-0.04em] leading-[1.06] max-w-4xl mb-6 text-balance">
             Have a project or opportunity in mind?
           </h2>
 
-          <p className="text-[#9496A1] text-base sm:text-lg max-w-xl mb-10 leading-relaxed font-normal">
+          <p className="text-white/70 text-base sm:text-lg max-w-xl mb-10 leading-relaxed font-normal">
             Whether you need a dynamic Laravel backend, a modern Next.js interface, or want to discuss
             software engineering roles—let&apos;s talk.
           </p>
@@ -29,27 +23,29 @@ export function Footer() {
           {/* Qumax Rolling-Text Pill Button */}
           <a
             href="mailto:hirzirofifirsyadhi@gmail.com?subject=Project%20Collaboration"
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-10 py-4 text-base font-semibold text-black transition-all duration-300 hover:bg-[#E2E8F0] shadow-2xl active:scale-95"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-10 py-4 text-base font-semibold text-black transition-all duration-300 hover:bg-white/90 shadow-2xl active:scale-95"
           >
-            <span className="relative flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-[140%]">
-              <span>Let&apos;s Talk</span>
-              <ArrowUpRight className="w-5 h-5" />
-            </span>
-            <span className="absolute flex items-center gap-2 translate-y-[140%] transition-transform duration-300 group-hover:translate-y-0">
-              <span>Let&apos;s Talk</span>
-              <ArrowUpRight className="w-5 h-5" />
-            </span>
+            <div className="relative flex items-center gap-2 overflow-hidden h-6">
+              <span className="flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full">
+                <span>Let&apos;s Talk</span>
+                <ArrowUpRight className="w-5 h-5" />
+              </span>
+              <span className="absolute top-0 left-0 flex items-center gap-2 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                <span>Let&apos;s Talk</span>
+                <ArrowUpRight className="w-5 h-5" />
+              </span>
+            </div>
           </a>
         </div>
 
         {/* Footer Top: Brand, Tagline, Navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-16 border-b border-[#22252E]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-16 border-b border-white/10">
           <div className="md:col-span-5 space-y-4">
             <div className="text-xl font-bold text-white tracking-tight flex items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-              <span className="font-bold tracking-tight">HIRZI ROFIF IRSYADHI</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-white" />
+              <span className="font-semibold tracking-tight uppercase">HIRZI ROFIF IRSYADHI</span>
             </div>
-            <p className="text-sm text-[#9496A1] max-w-sm leading-relaxed">
+            <p className="text-sm text-white/70 max-w-sm leading-relaxed">
               Web developer &amp; software engineering student at Politeknik Negeri Banyuwangi (D4 TRPL).
               Ex-Frontend Developer Intern at PT Hummatech.
             </p>
@@ -60,21 +56,21 @@ export function Footer() {
             <div className="text-xs font-mono uppercase tracking-wider text-white font-semibold">
               Navigation
             </div>
-            <ul className="space-y-2 text-sm text-[#9496A1]">
+            <ul className="space-y-2 text-sm text-white/70">
               <li>
-                <a href="#about" className="hover:text-white transition-colors">About Profile</a>
+                <a href="#" className="hover:text-white transition-colors">Home</a>
               </li>
               <li>
                 <a href="#works" className="hover:text-white transition-colors">Selected Works</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">Services &amp; Stack</a>
+                <a href="#services" className="hover:text-white transition-colors">Capabilities</a>
               </li>
               <li>
-                <a href="#experience" className="hover:text-white transition-colors">Career &amp; Education</a>
+                <a href="#experience" className="hover:text-white transition-colors">Experience</a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-white transition-colors">Common FAQs</a>
+                <a href="#faq" className="hover:text-white transition-colors">FAQs</a>
               </li>
             </ul>
           </div>
@@ -84,7 +80,7 @@ export function Footer() {
             <div className="text-xs font-mono uppercase tracking-wider text-white font-semibold">
               Direct Connect
             </div>
-            <div className="flex flex-col gap-2.5 text-sm text-[#9496A1]">
+            <div className="flex flex-col gap-2.5 text-sm text-white/70">
               <a
                 href="https://github.com/bheeluckzz"
                 target="_blank"
@@ -115,14 +111,14 @@ export function Footer() {
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#5E616E]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <div>
             &copy; 2026 Hirzi Rofif Irsaydhi. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
-            <span>Designed after Qumax Studio Aesthetic</span>
+            <span>Built with Next.js 16 &amp; Tailwind CSS</span>
             <span>&bull;</span>
-            <a href="#about" className="text-white hover:text-emerald-400 inline-flex items-center gap-1 transition-colors">
+            <a href="#" className="text-white hover:text-white/80 inline-flex items-center gap-1 transition-colors">
               <span>Back to Top</span>
               <ArrowUp className="w-3 h-3" />
             </a>

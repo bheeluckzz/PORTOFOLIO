@@ -1,142 +1,114 @@
 import Image from "next/image";
-import { ArrowDown, ArrowUpRight, FileText, Sparkles, MapPin } from "lucide-react";
+import { ArrowDown, FileText, Star } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="about" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#0A0B0D]">
-      {/* Subtle ambient lighting */}
-      <div
-        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/[0.03] blur-[140px] rounded-full"
-        aria-hidden="true"
-      />
+    <section className="relative h-screen min-h-[750px] w-full overflow-hidden bg-black flex flex-col justify-end">
+      {/* Background Media - Hirzi's Portrait covering the Hero (Qumax .home-hero_bg) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/foto1.jpg"
+          alt="Hirzi Rofif Irsaydhi"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top sm:object-[center_15%] filter brightness-[0.72] contrast-[1.05]"
+        />
+        {/* Exact Qumax Dark Gradient Layer Overlay (.home-hero_bg-layer) */}
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-black via-black/80 via-40% to-transparent"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"
+          aria-hidden="true"
+        />
+      </div>
 
-      <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-12 relative z-10">
-        {/* Top Dual Subtext (Direct Qumax Signature) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12 border-b border-[#22252E] text-sm text-[#9496A1] leading-relaxed font-normal">
-          <p className="max-w-md">
-            We create thoughtful digital systems that meet today’s engineering needs while staying
-            flexible, scalable, and ready for what comes next.
-          </p>
-          <p className="max-w-md md:text-right md:ml-auto">
-            Driven by technical discipline, focused on clean architecture, and built for long-term
-            impact.
-          </p>
-        </div>
-
-        {/* Central Headline & Flanking Stats (Qumax Hero Layout) */}
-        <div className="py-12 md:py-16">
-          <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 mb-8">
-            {/* Left Stat */}
-            <div className="hidden lg:block shrink-0 pb-2">
-              <div className="text-3xl font-bold text-white font-mono tracking-tight">04 Mo.+</div>
-              <div className="text-xs text-[#9496A1] uppercase tracking-wider font-mono mt-1">
-                PT Hummatech Internship
-              </div>
-            </div>
-
-            {/* Central Master Headline */}
-            <div className="text-center lg:text-center max-w-4xl mx-auto space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#22252E] bg-[#121316] text-xs font-medium text-[#9496A1]">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Available for Software Engineering Roles</span>
-              </div>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-white tracking-[-0.04em] leading-[1.05] text-balance">
-                Designed for today.
-                <br />
-                <span className="text-[#9496A1]">Made for tomorrow.</span>
-              </h1>
-              <p className="text-base sm:text-lg text-[#9496A1] max-w-2xl mx-auto leading-relaxed font-normal pt-2">
-                Thoughtfully crafted web systems, robust Laravel backends, and responsive Next.js
-                interfaces engineered by <strong className="text-white font-medium">Hirzi Rofif Irsaydhi</strong>.
-              </p>
-            </div>
-
-            {/* Right Stat */}
-            <div className="hidden lg:block shrink-0 text-right pb-2">
-              <div className="text-3xl font-bold text-white font-mono tracking-tight">D4 TRPL</div>
-              <div className="text-xs text-[#9496A1] uppercase tracking-wider font-mono mt-1">
-                Poliwangi Engineering
-              </div>
-            </div>
+      {/* Hero Contents Container (.home-hero_wrapper) */}
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-10 pb-10 sm:pb-16 flex flex-col justify-end h-full">
+        {/* Top Floating Row: Intro Text & Glass Experience Card */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-8 sm:mb-12">
+          {/* Top Left Intro (.home-hero_intro) */}
+          <div className="md:col-span-7 lg:col-span-8 max-w-lg">
+            <p className="text-sm sm:text-base text-white/90 leading-relaxed font-normal">
+              We create thoughtful digital experiences that meet today’s needs while staying
+              flexible, scalable, and ready for what comes next.
+            </p>
           </div>
 
-          {/* Quick Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4 pb-12">
-            <a
-              href="#works"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-[#E2E8F0] active:scale-[0.98]"
-            >
-              <span>Explore Works</span>
-              <ArrowDown className="w-4 h-4" />
-            </a>
-            <a
-              href="/CV_Hirzi_Rofif_Irsaydhi.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#22252E] bg-[#121316] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#181A20] hover:border-[#333745] active:scale-[0.98]"
-            >
-              <FileText className="w-4 h-4 text-[#9496A1]" />
-              <span>Curriculum Vitae (PDF)</span>
-            </a>
-          </div>
-
-          {/* Mobile Stats Row */}
-          <div className="grid grid-cols-2 gap-4 py-6 border-y border-[#22252E] lg:hidden text-center">
-            <div>
-              <div className="text-2xl font-bold text-white font-mono">04 Mo.+</div>
-              <div className="text-xs text-[#9496A1] mt-0.5">PT Hummatech Internship</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-white font-mono">D4 TRPL</div>
-              <div className="text-xs text-[#9496A1] mt-0.5">Poliwangi Engineering</div>
+          {/* Top Right Card (.home-hero_card with glass blur) */}
+          <div className="md:col-span-5 lg:col-span-4 flex justify-start md:justify-end">
+            <div className="qumax-card rounded-2xl p-5 sm:p-6 w-full max-w-[280px] space-y-4 shadow-2xl">
+              <div className="text-xs sm:text-sm text-white/80 leading-snug">
+                Driven by experience, focused on excellence, and built for long-term impact.
+              </div>
+              <div className="pt-2 border-t border-white/10">
+                <div className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-mono">
+                  04 Mo.+
+                </div>
+                <div className="text-xs text-white/60 font-medium uppercase tracking-wider mt-0.5">
+                  PT Hummatech Internship
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Hero Media Showcase (Qumax Wide Frame) */}
-        <div className="relative rounded-3xl border border-[#22252E] bg-[#121316] p-3 sm:p-4 shadow-2xl overflow-hidden group">
-          <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/10] w-full rounded-2xl overflow-hidden bg-[#181A20]">
-            <Image
-              src="/images/foto1.jpg"
-              alt="Hirzi Rofif Irsaydhi - Web Developer"
-              fill
-              priority
-              sizes="(max-width: 1240px) 100vw, 1240px"
-              className="object-cover object-top filter brightness-[0.95] contrast-[1.02] transition-transform duration-700 group-hover:scale-[1.02]"
-            />
+        {/* Bottom Master Row: Big Headline & Info / Actions */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-t border-white/10 pt-8">
+          {/* Master Headline (.home-hero_headline-text) */}
+          <div className="lg:col-span-8 space-y-4">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-semibold text-white tracking-[-0.04em] leading-[1.05] text-balance">
+              Designed for today.
+              <br />
+              <span className="text-white/60">Made for tomorrow.</span>
+            </h1>
 
-            {/* Studio Dark Vignette & Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0D] via-[#0A0B0D]/30 to-transparent opacity-90" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0B0D]/70 via-transparent to-[#0A0B0D]/70 opacity-60" />
+            {/* Sub-headline Action Pills */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <a
+                href="#works"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-black transition-all duration-200 hover:bg-white/90 active:scale-95 shadow-xl"
+              >
+                <span>Works</span>
+                <ArrowDown className="w-4 h-4" />
+              </a>
 
-            {/* Bottom Overlay Card Details */}
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0A0B0D]/80 backdrop-blur-md">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#9496A1]">
-                    Lead Web Developer
-                  </span>
+              <a
+                href="/CV_Hirzi_Rofif_Irsaydhi.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-white/20 backdrop-blur-md active:scale-95"
+              >
+                <FileText className="w-4 h-4 text-white/70" />
+                <span>Curriculum Vitae</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Info & Ratings (.home-hero_info-wrapper) */}
+          <div className="lg:col-span-4 space-y-4 lg:text-left">
+            {/* Rating Stars (Qumax signature rating block) */}
+            <div className="space-y-1.5">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center text-amber-400">
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
                 </div>
-                <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                  Hirzi Rofif Irsaydhi
-                </div>
-                <div className="text-xs sm:text-sm text-[#9496A1] flex items-center gap-2 mt-1">
-                  <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Banyuwangi, East Java &bull; D4 TRPL Politeknik Negeri Banyuwangi</span>
-                </div>
+                <div className="text-sm font-semibold text-white">5.0 / 5</div>
               </div>
-
-              <div className="flex items-center gap-3">
-                <a
-                  href="mailto:hirzirofifirsyadhi@gmail.com?subject=Project%20Inquiry"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-black transition-all duration-200 hover:bg-[#E2E8F0]"
-                >
-                  <span>Connect With Me</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </a>
+              <div className="text-xs font-medium text-white/70">
+                D4 TRPL Politeknik Negeri Banyuwangi
               </div>
             </div>
+
+            <p className="text-sm sm:text-base text-white/80 leading-relaxed font-normal">
+              Thoughtfully crafted to deliver modern style, lasting quality, and reliable software engineering.
+            </p>
           </div>
         </div>
       </div>

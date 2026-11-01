@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { Logos } from "@/components/Logos";
 import { Works } from "@/components/Works";
 import { Services } from "@/components/Services";
 import { Experience } from "@/components/Experience";
@@ -9,9 +10,10 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0A0B0D] text-white selection:bg-[#2A2D37] selection:text-white">
+    <main className="min-h-screen bg-black text-white selection:bg-[#333333] selection:text-white">
       <Navbar />
       <Hero />
+      <Logos />
       <Works />
       <Services />
       <Experience />

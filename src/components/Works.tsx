@@ -1,196 +1,163 @@
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "./icons/GithubIcon";
 
-interface Project {
+interface WorkProject {
   title: string;
   category: string;
-  description: string;
-  stack: string[];
   githubUrl: string;
   liveUrl?: string;
-  accent: string;
+  gradient: string;
   role: string;
+  stack: string[];
 }
 
-const PROJECTS: Project[] = [
+const WORKS: WorkProject[] = [
   {
-    title: "School Profile & Dynamic Portal",
-    category: "Fullstack Web Application",
+    title: "Brander / School Profile",
+    category: "Fullstack Laravel MVC",
     role: "Lead MVC Developer @ PT Hummatech",
-    description:
-      "Enterprise school profile web platform built during internship at PT Hummatech. Implemented dynamic MVC architecture, custom interactive JavaScript components, role-based controllers, and relational database schema.",
-    stack: ["Laravel", "PHP", "MySQL", "JavaScript", "Tailwind CSS"],
     githubUrl: "https://github.com/bheeluckzz",
-    accent: "from-emerald-950/30 to-transparent",
+    gradient: "from-[#141E30] to-[#243B55]",
+    stack: ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
   },
   {
-    title: "Nursing Fatimah Healthcare System",
-    category: "Healthcare & Clinical Administration",
-    role: "Backend & Systems Architecture",
-    description:
-      "Clinic workflow and patient care management system engineered to streamline record administration, nurse assignment tracking, and medical reports with strict data integrity.",
-    stack: ["PHP", "Laravel", "MySQL", "JavaScript", "REST APIs"],
+    title: "Zephyr / Nursing Fatimah",
+    category: "Healthcare Clinic System",
+    role: "Database & Backend Engineer",
     githubUrl: "https://github.com/bheeluckzz/nursing_fatimah",
-    accent: "from-sky-950/30 to-transparent",
+    gradient: "from-[#0F2027] via-[#203A43] to-[#2C5364]",
+    stack: ["PHP", "Laravel", "MySQL", "REST API"],
   },
   {
-    title: "High-Performance Landing Page",
-    category: "Frontend Engineering & Core Web Vitals",
-    role: "Frontend Architect",
-    description:
-      "Modern, responsive web landing page built with clean TypeScript paradigms. Optimized for fast First Contentful Paint, mobile usability, and zero cumulative layout shift.",
-    stack: ["TypeScript", "Next.js", "Tailwind CSS", "Performance"],
-    githubUrl: "https://github.com/bheeluckzz/Landing_Page",
-    accent: "from-purple-950/30 to-transparent",
-  },
-  {
-    title: "Personal Developer Portfolio",
-    category: "Studio Editorial Experience",
-    role: "Design & Jamstack Engineering",
-    description:
-      "Editorial dark-mode portfolio inspired by high-end studio web experiences. Powered by Next.js 16, React 19, and Motion with full keyboard accessibility.",
-    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind v4"],
+    title: "Nexify / Developer Portfolio",
+    category: "Jamstack & Interaction",
+    role: "Fullstack & UI Design",
     githubUrl: "https://github.com/bheeluckzz/PORTOFOLIO",
     liveUrl: "https://portofolio-gilt-tau-30.vercel.app",
-    accent: "from-neutral-900 to-transparent",
+    gradient: "from-[#161616] via-[#1f1f1f] to-[#292929]",
+    stack: ["Next.js 16", "React 19", "Tailwind v4", "Motion"],
   },
   {
-    title: "JSF Modular Web Framework",
+    title: "Vortex / Landing Page",
+    category: "Frontend Architecture",
+    role: "Core Web Vitals Specialist",
+    githubUrl: "https://github.com/bheeluckzz/Landing_Page",
+    gradient: "from-[#1D2671] to-[#C33764]",
+    stack: ["TypeScript", "Next.js", "Tailwind CSS"],
+  },
+  {
+    title: "Lumen / JSF Framework",
     category: "Frontend Foundation",
-    role: "Core Author",
-    description:
-      "Modular JavaScript web structure focusing on efficient DOM reconciliation, responsive state management, and lightweight asset bundles without heavy framework overhead.",
-    stack: ["JavaScript", "DOM Architecture", "CSS3", "HTML5"],
+    role: "DOM Reconciliation Architect",
     githubUrl: "https://github.com/bheeluckzz/JSF",
-    accent: "from-amber-950/30 to-transparent",
+    gradient: "from-[#2C3E50] to-[#4CA1AF]",
+    stack: ["JavaScript", "HTML5", "CSS3", "DOM"],
   },
 ];
 
 export function Works() {
   return (
-    <section id="works" className="py-24 sm:py-32 border-t border-[#22252E] bg-[#0A0B0D]">
-      <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-12">
-        {/* Qumax Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#9496A1] mb-2 block">
-              Selected Portfolio
-            </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-[-0.035em] leading-tight">
-              Works
-            </h2>
-          </div>
-          <p className="text-[#9496A1] max-w-md text-sm sm:text-base leading-relaxed">
-            Production software systems, internship deliverables, and open-source repositories
-            crafted with architectural precision.
-          </p>
+    <section id="works" className="py-24 sm:py-36 bg-black text-white relative">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
+        {/* Section Headline (Qumax .section-headline-v1) */}
+        <div className="flex items-center justify-between mb-16 pb-6 border-b border-white/10">
+          <h2 className="text-3xl sm:text-5xl font-semibold tracking-[-0.03em] uppercase">
+            Works
+          </h2>
+          <span className="text-xs font-mono uppercase tracking-widest text-white/50">
+            (01) Selected Systems
+          </span>
         </div>
 
-        {/* Project Cards (Qumax Layout) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {PROJECTS.map((project, idx) => (
-            <div
-              key={project.title}
-              className={`group rounded-3xl border border-[#22252E] bg-[#121316] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#333745] hover:bg-[#15171B] ${
-                idx === 0 ? "lg:col-span-2" : ""
-              }`}
-            >
-              {/* Mockup Canvas Header */}
-              <div className="rounded-2xl border border-[#22252E] bg-[#0A0B0D] p-6 mb-8 relative overflow-hidden transition-all duration-300 group-hover:border-[#333745]">
-                {/* Subtle Glow */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-40`}
-                />
+        {/* Works Cards Structure (Qumax Grid: 2-card, 1-card fullwidth, 2-card) */}
+        <div className="space-y-8">
+          {/* Top Row: 2 Cards (Aspect 3/2) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {WORKS.slice(0, 2).map((work) => (
+              <WorkCard key={work.title} work={work} aspect="aspect-[3/2]" />
+            ))}
+          </div>
 
-                {/* Window Chrome */}
-                <div className="flex items-center justify-between pb-4 border-b border-[#22252E] relative z-10">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#2A2D37]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#2A2D37]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#2A2D37]" />
-                  </div>
-                  <span className="text-[11px] font-mono text-[#5E616E] tracking-wider uppercase">
-                    {project.category}
-                  </span>
-                </div>
+          {/* Middle Row: Featured Full-Width Card (Aspect 21/9) */}
+          <div>
+            <WorkCard work={WORKS[2]} aspect="aspect-[16/9] lg:aspect-[21/9]" featured />
+          </div>
 
-                {/* Code / Architecture Preview Snippet */}
-                <div className="pt-5 relative z-10">
-                  <div className="flex items-center justify-between text-xs font-mono text-[#9496A1] mb-2">
-                    <span>// {project.role}</span>
-                    <span className="text-emerald-400">Verified</span>
-                  </div>
-                  <div className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                    {project.title}
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Info */}
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider">
-                    {project.category}
-                  </span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
-                  {project.title}
-                </h3>
-                <p className="text-[#9496A1] text-sm sm:text-base leading-relaxed mb-6 font-normal">
-                  {project.description}
-                </p>
-
-                {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.stack.map((t) => (
-                    <span
-                      key={t}
-                      className="text-xs font-mono text-[#C4C7D4] bg-[#181A20] px-3 py-1 rounded-full border border-[#22252E]"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Card Bottom CTA Links */}
-              <div className="flex items-center justify-between pt-6 border-t border-[#22252E]">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#9496A1] hover:text-white transition-colors"
-                >
-                  <GithubIcon className="w-4 h-4" />
-                  <span>Source Code</span>
-                </a>
-
-                {project.liveUrl ? (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-black bg-white hover:bg-[#E2E8F0] px-5 py-2.5 rounded-full transition-all duration-200"
-                  >
-                    <span>View Project</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                ) : (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#181A20] hover:bg-white hover:text-black px-5 py-2.5 rounded-full border border-[#22252E] transition-all duration-200"
-                  >
-                    <span>View Project</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+          {/* Bottom Row: 2 Cards (Aspect 3/2) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {WORKS.slice(3, 5).map((work) => (
+              <WorkCard key={work.title} work={work} aspect="aspect-[3/2]" />
+            ))}
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function WorkCard({
+  work,
+  aspect,
+  featured = false,
+}: {
+  work: WorkProject;
+  aspect: string;
+  featured?: boolean;
+}) {
+  return (
+    <div
+      className={`group relative ${aspect} w-full rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br ${work.gradient} p-8 flex flex-col justify-between transition-all duration-500 hover:border-white/30 shadow-2xl`}
+    >
+      {/* Subtle Inner Mesh / Glow */}
+      <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
+
+      {/* Card Top: Tags */}
+      <div className="relative z-10 flex items-center justify-between">
+        <span className="text-xs font-mono uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-black/60 border border-white/10 text-white/80 backdrop-blur-md">
+          {work.category}
+        </span>
+        <a
+          href={work.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white/60 hover:text-white p-2 rounded-full bg-black/40 border border-white/10 backdrop-blur-md transition-colors"
+          title="View Source Code"
+        >
+          <GithubIcon className="w-4 h-4" />
+        </a>
+      </div>
+
+      {/* Qumax Frosted-Glass Floating Circle Center Button (.works-v1-card_button) */}
+      <a
+        href={work.liveUrl || work.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 m-auto w-24 h-24 rounded-full qumax-circle-button flex flex-col items-center justify-center text-center text-xs font-semibold text-white tracking-wide z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100 hover:bg-white hover:text-black cursor-pointer select-none"
+      >
+        <span>View</span>
+        <span>Project</span>
+      </a>
+
+      {/* Card Bottom: Title & Category (Qumax .works-v1-card_content) */}
+      <div className="relative z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-4 border-t border-white/10">
+        <div>
+          <div className="text-xs font-mono text-white/60 mb-1">{work.role}</div>
+          <h3 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+            {work.title}
+          </h3>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {work.stack.map((s) => (
+            <span
+              key={s}
+              className="text-[11px] font-mono text-white/70 bg-black/60 px-2.5 py-1 rounded-md border border-white/10 backdrop-blur-md"
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
