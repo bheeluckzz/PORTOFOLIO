@@ -10,7 +10,7 @@ export interface NavLink {
   href: string;
 }
 
-export interface ProjectItem {
+export interface HighlightProjectItem {
   id: string;
   title: string;
   category: string;
@@ -20,7 +20,17 @@ export interface ProjectItem {
   githubUrl: string;
   liveUrl?: string;
   gradient: string;
-  aspect: "featured" | "standard";
+}
+
+export interface SliderRepoItem {
+  id: string;
+  name: string;
+  language: string;
+  category: string;
+  description: string;
+  githubUrl: string;
+  liveUrl?: string;
+  stars?: number;
 }
 
 export interface ServiceItem {
@@ -74,6 +84,7 @@ export const PORTFOLIO_DATA = {
     links: [
       { name: "Home", href: "#hero" },
       { name: "Works", href: "#works" },
+      { name: "Repositories", href: "#repositories" },
       { name: "Services", href: "#services" },
       { name: "Experience", href: "#experience" },
       { name: "FAQs", href: "#faq" },
@@ -88,8 +99,6 @@ export const PORTFOLIO_DATA = {
 
   // Hero Section
   hero: {
-    // You can change the hero background image here:
-    // e.g. "/images/hero-bg.png" (your cosmic sunglasses portrait) or "/images/foto1.jpg"
     bgImage: "/images/hero-bg.png",
     altText: "Hirzi Rofif Irsaydhi - Hero Cosmic Background",
     
@@ -140,72 +149,131 @@ export const PORTFOLIO_DATA = {
   // Selected Works / Projects
   works: {
     tag: "(01) Selected Systems",
-    heading: "Works",
+    heading: "Featured Works",
     description:
-      "Production software systems, internship deliverables, and open-source repositories crafted with architectural precision.",
-    projects: [
+      "Core highlighted production repositories: PORTOFOLIO, IMM, WEDDING, and RSIF.",
+
+    // The 4 main highlighted projects
+    highlights: [
       {
-        id: "school-profile",
-        title: "Brander / School Profile",
-        category: "Fullstack Laravel MVC",
-        role: "Lead MVC Developer @ PT Hummatech",
-        description:
-          "Enterprise school profile web platform built during internship at PT Hummatech. Implemented dynamic MVC architecture, custom interactive JavaScript modules, role-based controllers, and relational database schema.",
-        stack: ["Laravel", "PHP", "MySQL", "JavaScript", "Tailwind CSS"],
-        githubUrl: "https://github.com/bheeluckzz",
-        gradient: "from-[#141E30] via-[#1a2b42] to-[#243B55]",
-        aspect: "standard",
-      },
-      {
-        id: "nursing-fatimah",
-        title: "Zephyr / Nursing Fatimah",
-        category: "Healthcare Clinic System",
-        role: "Database & Backend Engineer",
-        description:
-          "Clinic workflow and patient care management system engineered to streamline record administration, nurse assignment tracking, and medical reports with strict data integrity.",
-        stack: ["PHP", "Laravel", "MySQL", "JavaScript", "REST API"],
-        githubUrl: "https://github.com/bheeluckzz/nursing_fatimah",
-        gradient: "from-[#0F2027] via-[#203A43] to-[#2C5364]",
-        aspect: "standard",
-      },
-      {
-        id: "portfolio-editorial",
-        title: "Nexify / Developer Portfolio",
+        id: "portofolio",
+        title: "PORTOFOLIO — Personal Developer Studio",
         category: "Jamstack & Studio Experience",
-        role: "Fullstack & UI Design",
+        role: "Lead Fullstack & UI Design",
         description:
           "High-end editorial portfolio inspired by Qumax dark studio aesthetic. Engineered with Next.js 16, React 19, Motion scroll choreography, and strict WCAG accessibility.",
         stack: ["Next.js 16", "React 19", "Tailwind v4", "Motion", "TypeScript"],
         githubUrl: "https://github.com/bheeluckzz/PORTOFOLIO",
         liveUrl: "https://portofolio-gilt-tau-30.vercel.app",
         gradient: "from-[#111317] via-[#1A1D24] to-[#282C37]",
-        aspect: "featured",
       },
       {
-        id: "landing-page",
-        title: "Vortex / Landing Page",
-        category: "Frontend Architecture",
-        role: "Core Web Vitals Specialist",
+        id: "imm",
+        title: "IMM — Ikatan Mahasiswa Muhammadiyah",
+        category: "Organization & Membership Platform",
+        role: "Fullstack Web Architect",
         description:
-          "Modern, responsive web landing page built with clean TypeScript paradigms. Optimized for fast First Contentful Paint, mobile usability, and zero cumulative layout shift.",
-        stack: ["TypeScript", "Next.js", "Tailwind CSS", "Performance"],
-        githubUrl: "https://github.com/bheeluckzz/Landing_Page",
-        gradient: "from-[#1A162B] via-[#241E3D] to-[#3B2D60]",
-        aspect: "standard",
+          "Official digital web platform and membership management portal for Ikatan Mahasiswa Muhammadiyah. Equipped with administrative dashboards, event publishing, member database, and dynamic content management.",
+        stack: ["Laravel", "PHP", "MySQL", "Tailwind CSS", "JavaScript"],
+        githubUrl: "https://github.com/bheeluckzz/imm",
+        gradient: "from-[#151B28] via-[#1E293B] to-[#0F172A]",
       },
       {
-        id: "jsf-framework",
-        title: "Lumen / JSF Framework",
-        category: "Frontend Foundation",
-        role: "DOM Reconciliation Architect",
+        id: "wedding",
+        title: "WEDDING — Interactive Digital Invitation",
+        category: "Event Experience & Digital RSVP",
+        role: "Creative Frontend Developer",
         description:
-          "Modular JavaScript web structure focusing on efficient DOM reconciliation, responsive state management, and lightweight asset bundles without heavy framework overhead.",
-        stack: ["JavaScript", "HTML5", "CSS3", "DOM Architecture"],
-        githubUrl: "https://github.com/bheeluckzz/JSF",
-        gradient: "from-[#1B2A32] via-[#223945] to-[#2F5263]",
-        aspect: "standard",
+          "Interactive modern digital wedding invitation platform featuring dynamic personalized guest naming, background audio integration, realtime RSVP confirmation, and digital wishing well.",
+        stack: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Audio API"],
+        githubUrl: "https://github.com/bheeluckzz/wedding",
+        gradient: "from-[#2A1820] via-[#381D29] to-[#1E1118]",
       },
-    ] as ProjectItem[],
+      {
+        id: "rsif",
+        title: "RSIF — Rumah Sakit Islam Fatimah Clinical System",
+        category: "Healthcare & Patient Administration",
+        role: "Backend & Systems Architecture",
+        description:
+          "Hospital and clinical patient administration software engineered for RSI Fatimah (nursing_fatimah). Streamlines patient medical record tracking, nurse assignment workflows, and secure medical reporting.",
+        stack: ["Laravel", "PHP", "MySQL", "JavaScript", "REST APIs"],
+        githubUrl: "https://github.com/bheeluckzz/nursing_fatimah",
+        gradient: "from-[#0F2027] via-[#203A43] to-[#2C5364]",
+      },
+    ] as HighlightProjectItem[],
+
+    // Slide Carousel for other repositories
+    sliderSection: {
+      tag: "(01.1) All Repositories",
+      heading: "Explore More Repositories",
+      description:
+        "Horizontal scrollable slider showcasing open-source projects, tools, frameworks, and architecture explorations.",
+      repos: [
+        {
+          id: "landing-page",
+          name: "Landing_Page",
+          language: "TypeScript",
+          category: "Frontend Architecture",
+          description:
+            "Modern, responsive web landing page built with clean TypeScript paradigms. Optimized for fast First Contentful Paint and zero CLS.",
+          githubUrl: "https://github.com/bheeluckzz/Landing_Page",
+        },
+        {
+          id: "jsf",
+          name: "JSF",
+          language: "JavaScript",
+          category: "Frontend Foundation",
+          description:
+            "Modular JavaScript web structure focusing on efficient DOM reconciliation, responsive state management, and lightweight asset bundles.",
+          githubUrl: "https://github.com/bheeluckzz/JSF",
+        },
+        {
+          id: "school-profile",
+          name: "School Profile & Portal",
+          language: "PHP / Laravel",
+          category: "Enterprise Web Portal",
+          description:
+            "Dynamic school profile web platform built during internship at PT Hummatech. Implemented dynamic MVC architecture and custom components.",
+          githubUrl: "https://github.com/bheeluckzz",
+        },
+        {
+          id: "oop",
+          name: "OOP",
+          language: "Dart",
+          category: "Algorithms & Paradigms",
+          description:
+            "Object-oriented programming implementations, data structures, algorithmic problems, and design patterns in Dart.",
+          githubUrl: "https://github.com/bheeluckzz/OOP",
+        },
+        {
+          id: "online-web",
+          name: "onlineWEB",
+          language: "HTML / CSS",
+          category: "Web Interfaces",
+          description:
+            "Online web interface experiments, interactive responsive views, and layout structures.",
+          githubUrl: "https://github.com/bheeluckzz/onlineWEB",
+        },
+        {
+          id: "bootstrap",
+          name: "BOOTSTRAP",
+          language: "HTML / CSS",
+          category: "Component Systems",
+          description:
+            "Component layouts and responsive grid system implementations using Bootstrap framework standards.",
+          githubUrl: "https://github.com/bheeluckzz/BOOTSTRAP",
+        },
+        {
+          id: "html",
+          name: "HTML",
+          language: "HTML5 / CSS3",
+          category: "Web Fundamentals",
+          description:
+            "Semantic HTML5 architecture, semantic tags, accessibility, and modern CSS3 styling exercises.",
+          githubUrl: "https://github.com/bheeluckzz/HTML",
+        },
+      ] as SliderRepoItem[],
+    },
   },
 
   // Services & Capabilities Section
