@@ -176,6 +176,7 @@ export const PORTFOLIO_DATA = {
           "Official digital web platform and membership management portal for Ikatan Mahasiswa Muhammadiyah. Equipped with administrative dashboards, event publishing, member database, and dynamic content management.",
         stack: ["Laravel", "PHP", "MySQL", "Tailwind CSS", "JavaScript"],
         githubUrl: "https://github.com/bheeluckzz/imm",
+        liveUrl: "https://immbanyuwangi.web.id/",
         gradient: "from-[#151B28] via-[#1E293B] to-[#0F172A]",
       },
       {
@@ -187,6 +188,7 @@ export const PORTFOLIO_DATA = {
           "Interactive modern digital wedding invitation platform featuring dynamic personalized guest naming, background audio integration, realtime RSVP confirmation, and digital wishing well.",
         stack: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Audio API"],
         githubUrl: "https://github.com/bheeluckzz/wedding",
+        liveUrl: "https://jvwedding.vercel.app/",
         gradient: "from-[#2A1820] via-[#381D29] to-[#1E1118]",
       },
       {

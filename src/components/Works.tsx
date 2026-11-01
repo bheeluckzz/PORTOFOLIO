@@ -143,9 +143,22 @@ function HighlightCard({ project }: { project: HighlightProjectItem }) {
 
       {/* Card Top: Category Tag & Source Icon */}
       <div className="relative z-10 flex items-center justify-between">
-        <span className="text-xs font-mono uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-black/60 border border-white/10 text-white/80 backdrop-blur-md">
-          {project.category}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-mono uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-black/60 border border-white/10 text-white/80 backdrop-blur-md">
+            {project.category}
+          </span>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-950/50 border border-emerald-500/30 px-2.5 py-1 rounded-full backdrop-blur-md hover:bg-emerald-900/60 transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Live Site</span>
+            </a>
+          )}
+        </div>
         <a
           href={project.githubUrl}
           target="_blank"
