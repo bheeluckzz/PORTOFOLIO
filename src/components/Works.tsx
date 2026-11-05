@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { ArrowUpRight, ArrowLeft, ArrowRight, GitFork, Star, Code2 } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, ArrowLeft, ArrowRight, Code2 } from "lucide-react";
 import { GithubIcon } from "./icons/GithubIcon";
 import { PORTFOLIO_DATA, HighlightProjectItem, SliderRepoItem } from "@/data/portfolioData";
 import { ScrollReveal } from "./animations/ScrollReveal";
@@ -138,8 +139,20 @@ function HighlightCard({ project }: { project: HighlightProjectItem }) {
     <div
       className={`group relative aspect-[16/11] sm:aspect-[16/10] w-full rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br ${project.gradient} p-7 sm:p-8 flex flex-col justify-between transition-all duration-500 hover:border-white/30 shadow-2xl`}
     >
-      {/* Subtle Inner Glow */}
-      <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
+      {/* Real Project Screenshot Background with Smooth Zoom on Hover */}
+      {project.image && (
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover object-top opacity-35 group-hover:opacity-45 group-hover:scale-105 transition-all duration-700 ease-out"
+          />
+          {/* Studio Dark Gradient Vignette for Text Contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 via-55% to-black/40" />
+        </div>
+      )}
 
       {/* Card Top: Category Tag & Source Icon */}
       <div className="relative z-10 flex items-center justify-between">

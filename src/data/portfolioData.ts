@@ -19,6 +19,7 @@ export interface HighlightProjectItem {
   stack: string[];
   githubUrl: string;
   liveUrl?: string;
+  image: string;
   gradient: string;
 }
 
@@ -156,18 +157,6 @@ export const PORTFOLIO_DATA = {
     // The 4 main highlighted projects
     highlights: [
       {
-        id: "portofolio",
-        title: "PORTOFOLIO — Personal Developer Studio",
-        category: "Jamstack & Studio Experience",
-        role: "Lead Fullstack & UI Design",
-        description:
-          "High-end editorial portfolio inspired by Qumax dark studio aesthetic. Engineered with Next.js 16, React 19, Motion scroll choreography, and strict WCAG accessibility.",
-        stack: ["Next.js 16", "React 19", "Tailwind v4", "Motion", "TypeScript"],
-        githubUrl: "https://github.com/bheeluckzz/PORTOFOLIO",
-        liveUrl: "https://portofolio-gilt-tau-30.vercel.app",
-        gradient: "from-[#111317] via-[#1A1D24] to-[#282C37]",
-      },
-      {
         id: "imm",
         title: "IMM — Ikatan Mahasiswa Muhammadiyah",
         category: "Organization & Membership Platform",
@@ -177,7 +166,21 @@ export const PORTFOLIO_DATA = {
         stack: ["Laravel", "PHP", "MySQL", "Tailwind CSS", "JavaScript"],
         githubUrl: "https://github.com/bheeluckzz/imm",
         liveUrl: "https://immbanyuwangi.web.id/",
-        gradient: "from-[#151B28] via-[#1E293B] to-[#0F172A]",
+        image: "/images/projects/imm.png",
+        gradient: "from-[#2A080C] via-[#3D0C13] to-[#1A0508]",
+      },
+      {
+        id: "portofolio",
+        title: "PORTOFOLIO — Personal Developer Studio",
+        category: "Jamstack & Studio Experience",
+        role: "Lead Fullstack & UI Design",
+        description:
+          "High-end editorial portfolio inspired by Qumax dark studio aesthetic. Engineered with Next.js 16, React 19, Motion scroll choreography, and strict WCAG accessibility.",
+        stack: ["Next.js 16", "React 19", "Tailwind v4", "Motion", "TypeScript"],
+        githubUrl: "https://github.com/bheeluckzz/PORTOFOLIO",
+        liveUrl: "https://portofolio-gilt-tau-30.vercel.app",
+        image: "/images/projects/portofolio.png",
+        gradient: "from-[#111317] via-[#1A1D24] to-[#282C37]",
       },
       {
         id: "wedding",
@@ -189,7 +192,8 @@ export const PORTFOLIO_DATA = {
         stack: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Audio API"],
         githubUrl: "https://github.com/bheeluckzz/wedding",
         liveUrl: "https://jvwedding.vercel.app/",
-        gradient: "from-[#2A1820] via-[#381D29] to-[#1E1118]",
+        image: "/images/projects/wedding.png",
+        gradient: "from-[#202422] via-[#2A302D] to-[#181C1A]",
       },
       {
         id: "rsif",
@@ -200,7 +204,8 @@ export const PORTFOLIO_DATA = {
           "Hospital and clinical patient administration software engineered for RSI Fatimah (nursing_fatimah). Streamlines patient medical record tracking, nurse assignment workflows, and secure medical reporting.",
         stack: ["Laravel", "PHP", "MySQL", "JavaScript", "REST APIs"],
         githubUrl: "https://github.com/bheeluckzz/nursing_fatimah",
-        gradient: "from-[#0F2027] via-[#203A43] to-[#2C5364]",
+        image: "/images/projects/rsif.png",
+        gradient: "from-[#0A1E2E] via-[#0E2C42] to-[#071520]",
       },
     ] as HighlightProjectItem[],
 
