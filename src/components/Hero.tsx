@@ -26,7 +26,7 @@ export function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative h-screen min-h-[760px] w-full overflow-hidden bg-black flex flex-col justify-end"
+      className="relative min-h-screen w-full overflow-hidden bg-black flex flex-col justify-end pt-28 sm:pt-32 pb-12 sm:pb-16"
     >
       {/* Dynamic Background Image with Parallax Scale & Gradient Vignette */}
       <motion.div
@@ -56,12 +56,12 @@ export function Hero() {
       {/* Hero Contents Container (.home-hero_wrapper) */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-10 pb-10 sm:pb-16 flex flex-col justify-end h-full"
+        className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-10 flex flex-col justify-end"
       >
         {/* Top Floating Row: Intro Text & Glass Experience Card */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-8 sm:mb-12">
           {/* Top Left Intro */}
-          <ScrollReveal direction="up" delay={0.1} className="md:col-span-7 lg:col-span-8 max-w-lg">
+          <ScrollReveal direction="up" delay={0.1} className="hidden md:block md:col-span-7 lg:col-span-8 max-w-lg">
             <p className="text-sm sm:text-base text-white/90 leading-relaxed font-normal">
               {hero.subtextLeft}
             </p>

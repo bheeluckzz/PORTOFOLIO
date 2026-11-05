@@ -152,7 +152,7 @@ function HighlightCard({ project }: { project: HighlightProjectItem }) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-950/50 border border-emerald-500/30 px-2.5 py-1 rounded-full backdrop-blur-md hover:bg-emerald-900/60 transition-colors"
+              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-500/40 px-2.5 py-1 rounded-full backdrop-blur-md hover:bg-emerald-900/80 transition-colors"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>Live Site</span>
